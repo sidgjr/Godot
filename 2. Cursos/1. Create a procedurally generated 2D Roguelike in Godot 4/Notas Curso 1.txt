@@ -200,6 +200,57 @@ Create a procedurally generated 2D Roguelike in Godot 4
 
         Criar uma nova função
 
+            Código do curso
+
+            {
+                extends CharacterBody2D
+
+                @export var speed: int
+                var input_moviment = Vector2()
+
+                # Called when the node enters the scene tree for the first time.
+                func _ready():
+                    pass # Replace with function body.
+
+
+                # Called every frame. 'delta' is the elapsed time since the previous frame.
+                func _process(delta):
+                    movement(delta)
+
+                func movement(delta):
+                    input_moviment = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+
+                    if input_moviment != Vector2.ZERO:
+                        velocity = input_moviment * speed
+
+                    if input_moviment == Vector2.ZERO:
+                        velocity = Vector2.ZERO
+
+                    move_and_slide()
+            }
+
+            Código que funcionou
+
             {
                 
             }
+
+        Project
+
+            Project Settings
+
+                Input Map, dá para ver todos os inputs do projeto
+
+                    Show Built-in Actions
+
+                    Ir na Entrada "Left"
+
+                    Clicar no +, colocar letra A
+
+                    O mesmo pros demais (W, S, D)
+
+        main_level
+
+            ColorRect (Node)
+
+            Mudar a cor, tamanho e no Inspector colocar Z index -2 (pro player ficar na frente)

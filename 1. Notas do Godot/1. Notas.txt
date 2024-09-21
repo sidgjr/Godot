@@ -19,3 +19,7 @@ Geral
         Cena principal (o que é, como definir)
 
         Vector2d, vetores
+
+    Infos
+
+        F, centralizar camera
