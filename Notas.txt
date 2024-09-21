@@ -1,0 +1,224 @@
+Sobre
+
+    O que é o Godot?
+
+        _texto_
+
+    Quem criou?
+
+        _texto_
+
+    Porque Godot?
+
+        _texto_
+
+Geral
+
+    Dúvidas
+
+        Cena principal (o que é, como definir)
+
+Curso: Create a procedurally generated 2D Roguelike in Godot 4
+
+    1. Setting up godot, importing our sprites and creating the main level
+    
+        Criar projeto
+
+            Existem 3 tipos de pro
+
+                Forward+
+
+                Mobile
+
+                Compatibility
+
+        Projeto
+
+            Ponto de vista
+
+                2D
+                
+                3D
+
+                Script
+
+                Assetlib
+
+            Recursos
+
+                Cenas
+
+                FileSystem
+
+                Inspector
+
+                Node
+
+                History
+
+            Run
+
+                Rodar projeto
+
+                Rodar cena atual
+
+                Rodar cena especifíca
+
+                Gravação
+
+    2. Creating the player and its animations
+
+        Importar assets
+
+            Só arrastar pasta e arquivos para FileSystem
+
+        Criar uma cena 2D
+
+            Chamada main_level
+
+            Salvar em uma pasta chamada Levels
+
+            Criar pasta dentro chamada Scenes
+
+        Criar Node
+
+            Botão de + perto das cenas
+
+            CharacterBody2D (Node)
+
+                Player
+
+                    CollisionShape2D (Node)
+
+                        Inspector
+
+                            Shape, new CircleShape2D
+
+                    Sprite2D (Node)
+
+                        Inspector
+
+                            Texture, arrastar o sprite do jogador (dentro da pasta Sprites)
+
+                            Animation
+
+                                Hframes, colocar o número de sprites horizontal, no caso 8
+
+                                Vframes, colocar o número de sprites vertical, no caso 7
+
+        Project
+
+            Project Settings
+
+                Rendering
+
+                    Texture
+
+                        Default Texture Filter, mudar para Nearest (bom para pixelart)
+
+        Ferramentas
+
+            Move mode (W)
+
+                Para movimentar Recursos
+
+                Movimentar a hitbox para fazer sentido com o personagem
+
+        Player (criado em "Criar Node")
+
+            AnimationPlayer (Node), nome para anim
+
+            CollisionShape2D, nome player_collider
+
+            Area2D (Node), nome para hitbox
+
+                Ter um CollisionShape2D, também tendo shape de círculo, mas mudar a cor para melhor vizualização, nome hitbox_collider
+
+                    Debug Color
+
+            Diminuiu e reposicionou os circulos
+
+            Salvar o Player em uma pasta chamada Entities, dentro Scenes, por fim uma pasta chamada Player
+
+        Animação
+
+            Mudar os Frames no Sprite, começa uma "animação"
+
+            Ir no anim, Animação em baixo, criar uma nova
+
+                Idle
+
+                Move
+
+                Dead
+
+            Property na frame do Sprite, Criar, para importar para animação
+
+            Dar zoom para ver microsegundos
+
+            mudar o tempo total e adicionar loop na animação
+
+            Auto produzir ao carregar, opção do lado da barra de animação
+
+            Idle: posicionei as animações dividas igualmente nos 0.5 segundos
+
+            Move: dividi 10 frames em 1 seg (tinha 11 então improvisei no começo)
+
+            Dead: Mesma coisa do move, só que com mais frames e 2 segundos
+
+                Desabilitar o player_collider (Inspector), adicionar isso nessa animação
+
+                    Tanto no começo quanto no fim
+
+                O mesmo se repete para hitbox
+
+            Em Idle e Move, habiitar a colisão no começo e no fim.
+
+                Dá para copiar e colar faixas, tanto de animação quanto de outros recursos como colisão.
+
+        Salver o Player
+
+        main_level
+
+            Instanciar Child Scene, escolher player
+
+        Implementar Camera2D no Player
+
+            Mudar o zoom (Inspector)
+
+    3. Player movement
+
+        Ir no Player, símbolo de papel, para adicionar um Script
+
+            Herda de CharacterBody2D
+
+            Mudar template para default
+
+            Ajustar path para Entities/entities_scripts
+
+            Criar
+
+        Criar uma váriavel para velocidade (speed)
+
+            var speed = 50
+
+        @export
+
+            Exporta para o Inspector
+
+            O valor pode ser mudado por lá, mas altera apenas o atual, não o que está escrito no Script
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
