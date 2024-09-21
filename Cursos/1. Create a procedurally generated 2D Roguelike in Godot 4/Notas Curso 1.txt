@@ -1,24 +1,4 @@
-Sobre
-
-    O que é o Godot?
-
-        _texto_
-
-    Quem criou?
-
-        _texto_
-
-    Porque Godot?
-
-        _texto_
-
-Geral
-
-    Dúvidas
-
-        Cena principal (o que é, como definir)
-
-Curso: Create a procedurally generated 2D Roguelike in Godot 4
+Create a procedurally generated 2D Roguelike in Godot 4
 
     1. Setting up godot, importing our sprites and creating the main level
     
@@ -208,17 +188,14 @@ Curso: Create a procedurally generated 2D Roguelike in Godot 4
 
             O valor pode ser mudado por lá, mas altera apenas o atual, não o que está escrito no Script
 
-            
+        Váriavel pode ser int
 
+            @export var speed: int
 
+            Por padrão vai vir 0
 
+        Vetores
 
+            var input_moviment = Vector2()
 
-
-
-
-
-
-
-
-
+        Criar uma nova função
